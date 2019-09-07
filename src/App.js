@@ -16,7 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="scoreboard">
-        <Header title="My Scoreboard" players={this.props.players}/>
+        <Header players={this.props.players}/>
 
     {
       this.props.players.map(player => {
@@ -76,8 +76,8 @@ class App extends React.Component {
   // }
 }
 
-const mapActionToProps = (state) => ({
+const mapStateToProps = (state) => ({
   players: state.playerReducer.players,
 });
 
-export default connect(mapActionToProps)(App);
+export default connect(mapStateToProps)(App);

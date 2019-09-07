@@ -27,7 +27,7 @@ class Player extends React.Component {
 				<Counter
 					score={score}
 					id={id}
-					changeScore={changeScore}
+					// changeScore={changeScore}
 				/>
 			</div>
 		)

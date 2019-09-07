@@ -1,4 +1,4 @@
-import {ADD_PLAYER, CHANGE_SCORE, REMOVE_PLAYER} from "../actionTypes";
+import {ADD_PLAYER, CHANGE_SCORE, REMOVE_PLAYER, UPDATE_TITLE} from "../actionTypes";
 
 let maxId = 4;
 
@@ -43,6 +43,11 @@ export const playerReducer = (state = playerInitialState, action) => {
 				players:[
 					...state.players
 				]
+			}
+		case UPDATE_TITLE:
+			state.title = action.payload.title;
+			return{
+				...state
 			}
 			default:
 			return state;

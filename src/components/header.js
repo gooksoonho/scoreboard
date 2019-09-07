@@ -1,6 +1,6 @@
 import React from "react";
 import {Stats} from "./stats";
-import {Stopwatch} from "./Stopwatch";
+import Stopwatch from "./Stopwatch";
 import PropTypes from "prop-types"
 import {connect} from "react-redux";
 
@@ -25,8 +25,8 @@ Header.defaultProps = {
 }
 
 
-const mapActionToProps = (state) => ({
+const mapStateToProps = (state) => ({
 	title: state.playerReducer.title
 })
 
-export default connect(mapActionToProps)(Header);
+export default connect(mapStateToProps)(Header);
