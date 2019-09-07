@@ -6,11 +6,12 @@ import {
 	NavbarBrand,
 	Nav,
 	NavItem,
-	NavLink,
+	// NavLink,
 	UncontrolledDropdown,
 	DropdownToggle,
 	DropdownMenu,
 	DropdownItem } from 'reactstrap';
+import {NavLink} from "react-router-dom";
 
 export class Menu extends React.Component {
 	constructor(props) {
@@ -29,25 +30,22 @@ export class Menu extends React.Component {
 	render() {
 		return (
 			<div>
-				<Navbar color="dark" dark expand="md">
-					<NavbarBrand href="/">reactstrap</NavbarBrand>
+				<Navbar color="dark" dark fixed expand="md">
+					<NavLink to="/" className="navbar-brand">reactstrap</NavLink>
 					<NavbarToggler onClick={this.toggle} />
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="ml-auto" navbar>
 							<NavItem>
-								<NavLink href="/heroes" className="nav-link">Heroes</NavLink>
+								<NavLink to="/heroes" className="nav-link">Heroes</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink href="/scoreboard" className="nav-link">Heroes</NavLink>
+								<NavLink to="/scoreboard" className="nav-link">Scoreboard</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink href="/todo" className="nav-link">Heroes</NavLink>
+								<NavLink to="/todo" className="nav-link">do</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink href="/components/">Components</NavLink>
-							</NavItem>
-							<NavItem>
-								<NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+								<NavLink href="https://github.com/gooksoonho">GitHub</NavLink>
 							</NavItem>
 							<UncontrolledDropdown nav inNavbar>
 								<DropdownToggle nav caret>
