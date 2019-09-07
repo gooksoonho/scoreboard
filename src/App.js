@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import Header from "./components/header";
-import Player from "./components/player";
+// import Player from "./components/player";
 import AddPlayerForm from "./components/addPlayerForm";
 import {connect} from "react-redux";
+import {CustomPlayer} from "./components/CustomPlyaer";
 
 
 class App extends React.Component {
@@ -13,6 +14,18 @@ class App extends React.Component {
   //   this.handleRemovePlayer = this.handleRemovePlayer.bind(this);
   //   this.handleChangeScore = this.handleChangeScore.bind(this)
   // }
+
+  getHighScore() {
+    let highScore = 0;
+    this.props.players.forEach(player => {
+      if (player.score>highScore){
+        highScore = player.score;
+      }
+    })
+    return highScore;
+  }
+
+
   render() {
     return (
       <div className="scoreboard">
@@ -21,9 +34,10 @@ class App extends React.Component {
     {
       this.props.players.map(player => {
         return (
-          <Player name={player.name} key={player.id}
+          <CustomPlayer name={player.name} key={player.id}
                   id={player.id}
                   score={player.score}
+                  isHighScore={player.score === this.getHighScore()}
                   // changeScore={this.handleChangeScore}
                   // removePlayer={this.handleRemovePlayer}
           />
