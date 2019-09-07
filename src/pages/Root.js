@@ -3,10 +3,12 @@ import {Home} from "./Home";
 import {Heroes} from "./Heroes";
 import {Scoreboard} from "./Scoreboard";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {Menu} from "./Menu";
 
 export const Root = (props) => {
 	return (
 		<BrowserRouter>
+			<Menu />
 			<p>공통메뉴</p>
 			<Switch>
 				<Route exact path="/" component={Home}></Route>
