@@ -1,14 +1,20 @@
 import React from 'react';
 import Player from "./player";
+import classNames from 'classnames'
+
+import styles from '../pages/scoreboard.module.css'
 
 export const CustomPlayer = (props) => {
-	let dynamicClass;
-	if (props.isHighScore){
-		// dynamicClass += '' + 'is-high-score'
-		dynamicClass = 'svg is-high-score';
-	} else {
-		dynamicClass = 'svg';
-	}
+	// let dynamicClass = styles.svg;
+	// if (props.isHighScore){
+	// 	// dynamicClass += '' + 'is-high-score'
+	// 	// dynamicClass = 'svg is-high-score';
+	// 	dynamicClass += '' + styles.isHighScore;
+	// } else {
+	// 	dynamicClass = 'svg';
+	// }
+
+	classNames(styles.svg, {[styles['is-high-score']]:this.props.isHighScore})
 
 	return (
 		<Player {...props}>

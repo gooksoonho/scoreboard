@@ -2,6 +2,9 @@ import React from "react";
 import PropTypes from	"prop-types";
 import {changeScore} from "../redux/actions";
 import {connect} from "react-redux";
+import classNames from 'classnames';
+
+import styles from '../pages/scoreboard.module.css'
 
 class Counter extends React.Component { //extends 부모가 가지고 있는 속성 메서드를 물려 받는다
 	// constructor(){
@@ -15,11 +18,11 @@ class Counter extends React.Component { //extends 부모가 가지고 있는 속
 
 	render() {
 		return(
-			<div className="counter">
-				<button className="counter-action decrement"
+			<div className={styles.counter}>
+				<button className={classNames(styles.counterAction, styles.stdecrement)}
 								onClick={() => this.props.changeScore(this.props.id, -1)}>-</button>
-				<span className="counter-score">{this.props.score}</span>
-				<button className="counter-action increment"
+				<span className={styles.counterScore}>{this.props.score}</span>
+				<button className={classNames("counter-action", "increment")}
 								onClick={() => this.props.changeScore(this.props.id, +1)}>+</button>
 			</div>
 		)
